@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="pixastic.custom.js"></script>
+  <script type="text/javascript" src="munch.js"></script>
+</head>
+
+<body>
+<style>
+  body {
+    background: none repeat scroll 0 0 #E4EFD7;
+    font-family: Arial;
+    font-size: 20px;
+  }
+  #header {
+    margin: 0 auto;
+    width: 1035px;
+  }
+  #content {
+    margin: 0 auto;
+    width: 1035px;
+    background-color: #fff;
+    min-height: 800px;
+    padding: 10px;
+  }
+  #camera {
+    border: 1px solid #bbb;
+    width: 640px;
+    height: 480px;
+    padding: 10px;
+    background-color: #333;
+    float: left;
+  }
+  #other {
+    float: left;
+    width: 330px;
+  }
+  #logo  {
+    float: left;
+    width: 250px;
+  }
+  #note {
+    float: left;
+    font-weight: bold;
+    color: #82A76A;
+    font-size: 45px;
+    line-height: -20px;
+    height: 60px;
+    padding: 10px 0 0 20px;
+  }
+  .box {
+    width: 340px;
+    margin: 0 0 5px 10px;
+    padding: 8px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    height: 80px;
+  }
+  .box div {
+    margin: 5px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .card {
+    display: inline-block;
+    margin: 5px;
+
+    width: 320px;
+    overflow: hidden;
+    padding: 5px;
+    border: 2px solid #000;
+  }
+</style>
+
+<div id="header">
+  <div id="logo"><img src="http://www.cardmunch.com/images/logo.png"></div>
+  <div id="note">Web Munch!</div>
+  <div style="clear: both;"></div>
+</div>
+
+<div id="content">
+  <div id="camera" class="webcam-origin">
+  <object id="iembedflash" 
+    classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" 
+    codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="640" height="480">
+    <param name="movie" value="camcanvas.swf" />
+    <param name="quality" value="high" />
+    <param name="allowScriptAccess" value="always" />
+    <param name="opaque" value="wmode" />
+    <embed allowScriptAccess="always" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" mayscript="true"
+      id="embedflash" 
+      src="camcanvas.swf" 
+      width="640"                                                                                                       
+      height="480" 
+      wmode="opaque"
+      type="application/x-shockwave-flash" />
+   </object>
+   </div>
+
+   <div id="other">
+    <div class="box" style="background-color: #DD4F4C">
+      <div style="font-size: 25px;">Press &lt;SPACE&gt; to munch the business card.</div>
+    </div>
+    <div class="box" style="background-color: #FDBF42">Total Cards Munched: <div id="total_munched">0</div></div>
+    <div class="box" style="background-color: #EDD155">Cards To Upload:<div id="total_waiting">0</div></div>
+    <div class="box" style="background-color: #78B340">Share on Linkedin:
+      <div><script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+      <script type="IN/Share" data-url="http://localhost" data-size="large" data-counter="right"></script></div>
+    </div>
+    <div class="box" style="background-color: #409EB3">
+      <button style="width: 200px; height: 50px;font-size: 20px;margin-top: 13px;" id="munch_now">Munch Card Now!</button>
+    </div>
+   </div>
+   <div style="clear: both;"></div>
+
+
+  <div id="cards">
+  </div>
+
+</div>
+
+</body>
+</html>
